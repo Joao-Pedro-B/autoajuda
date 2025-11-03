@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', Arial, sans-serif
+    }
+
+    body {
+        background-color: #f8f8f8;
+        color: #222;
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 60px 8%;
+    }
+
+    /* Cabeçalho */
+
+    .header {
+        background-color: #ffffff;
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .nav a {
+        background-color: #5170ff;
+        color: #000;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 25px;
+        border-radius: 50px;
+        margin-left: 10px;
+        transition: 0.3s;
+        
+        
+    }
+
+    .nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Começo */
+
+    .intro {
+        background-color: #5170ff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    /* Cards */
+
+    .cards-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 60px;
+        background-image: url(imagens/fundo\ 02.jpeg);
+        background-size: cover;
+        background-position: center;
+        padding: 6vw;
+    }
+
+    .card {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        flex: 1 1 200px;
+        max-width: 240px;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        
+    }
+
+    .card img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+
+    /* Parte da Barra de busca */
+
+    .decor-bar {
+        background-color: white;
+        border-radius: 50px;
+        width: 80%;
+        margin: 30px auto;
+        padding: 15px 25px;
+        text-align: center;
+        font-size: 18px;
+        color: #444;
+        font-weight: 600;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
+
+    /* Parte do Teste Vocacional */
+
+    .teste-vocacional {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, rgba(81, 112, 255, 0.95) 50%, rgba(0, 0, 0, 0.5) 50%), url(imagens/fundo\ 03.jpeg) no-repeat center/cover;
+        color: rgb(255, 255, 255);
+        padding: 80px 8%;
+        border-radius: 20px;
+    }
+
+    .texto {
+        width: 45%;
+        min-width: 280px;
+    }
+
+    .texto h3 {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .texto h2 {
+        color: #ffd21f;
+        font-size: 33px;
+        margin: 15px 0;
+        line-height: 1.2;
+    }
+
+    .texto p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        opacity: 0.9;
+    }
+
+    .texto button {
+        display: inline-block;
+        background-color: #ffd21f;
+        color: #000000;
+        padding: 18px 40px;
+        border-radius: 30px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.3s;
+    }
+    .texto button:hover {
+        background-color: #ffd21f;
+        transform: translateY(-5px);
+    }
+
+    .cursos {
+        position: relative;
+        width: 45%;
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .curso {
+        position: absolute;
+        background-color: white;
+        color: #333;
+        border-radius: 15px;
+        padding: 20px 25px;
+        font-weight: 600;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
+    }
+
+    .curso:hover {
+        transform: scale(1.05);
+    }
+
+    .curso:nth-child(1) { 
+        top: -5%; left: -14%; 
+    }
+    .curso:nth-child(2) { 
+        top: 1%; right: 7%;
+     }
+    .curso:nth-child(3) {
+        top: 30%; left: -2%; 
+    }
+    .curso:nth-child(4) { 
+        bottom: -5%; left: -14%;
+    }
+    .curso:nth-child(5) { 
+        bottom: 1%; right: 7%; 
+    }
+
+    /* Flexibilidade */
+
+    @media (max-width: 1024px) {
+        .header {
+            padding: 15px 25px;
+        }
+
+        .cards-section {
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .texto h2 {
+            font-size: 26px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logo {
+            font-size: 24px;
+        }
+
+        .nav a {
+            display: inline-block;
+            margin: 8px;
+            font-size: 14px;
+        }
+
+        .cards-section {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .decor-bar {
+            width: 95%;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .teste-vocacional {
+            flex-direction: column;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .texto, .cursos {
+            width: 100%;
+        }
+
+        .cursos {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .curso {
+            width: 90%;
+            text-align: center;
+        }
+
+        .texto button {
+            width: 90%;
+            padding: 15px 0;
+        }
+    }
