@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+      .teste-vocacional {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, rgba(81, 112, 255, 0.95) 50%, rgba(0, 0, 0, 0.5) 50%), url(../imagens/fundo\ 03.jpeg) no-repeat center/cover;
+        color: rgb(255, 255, 255);
+        padding: 80px 8%;
+        border-radius: 20px;
+    }
+
+    .texto {
+        width: 45%;
+        min-width: 280px;
+    }
+
+    .texto h3 {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .texto h2 {
+        color: #ffd21f;
+        font-size: 33px;
+        margin: 15px 0;
+        line-height: 1.2;
+    }
+
+    .texto p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        opacity: 0.9;
+    }
+
+    .texto button {
+        display: inline-block;
+        background-color: #ffd21f;
+        color: #000000;
+        padding: 18px 40px;
+        border-radius: 30px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.3s;
+    }
+    .texto button:hover {
+        background-color: #ffd21f;
+        transform: translateY(-5px);
+    }
+
+    .cursos {
+        position: relative;
+        width: 45%;
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .curso {
+        position: absolute;
+        background-color: white;
+        color: #333;
+        border-radius: 15px;
+        padding: 20px 25px;
+        font-weight: 600;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
+    }
+
+    .curso:hover {
+        transform: scale(1.05);
+    }
+
+    .curso:nth-child(1) { 
+        top: -5%; left: -14%; 
+    }
+    .curso:nth-child(2) { 
+        top: 1%; right: 7%;
+     }
+    .curso:nth-child(3) {
+        top: 30%; left: -2%; 
+    }
+    .curso:nth-child(4) { 
+        bottom: -5%; left: -14%;
+    }
+    .curso:nth-child(5) { 
+        bottom: 1%; right: 7%; 
+    }
