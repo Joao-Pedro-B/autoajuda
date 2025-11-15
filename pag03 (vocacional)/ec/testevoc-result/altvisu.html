@@ -1,97 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="imagens/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>Teste Vocacional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Vocacional</title>
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="imagens/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="circle"></div>
-        <h1>UNIDESC</h1>
-        <div class="title-box"> Teste Vocacional</div>
-    </header>
 
-    <hr>
+  <h1>Teste Vocacional</h1>
 
-    <div class="question-block">
-        <div class="question">
-            <div class="number">1</div>
-            <div class="question-text">Aqui vai vir coisa</div>
-        </div>
-        <div class="option">
-            <p>Concordo</p>
-            <p>Neutro</p>
-            <p>Discordo</p>
-        </div>
+  <p>Responda sinceramente e descubra qual curso combina mais com você!</p>
+
+  <form id="testeForm">
+
+    <!-- MEDICINA -->
+    <div class="pergunta" data-curso="medicina">
+      <p>1. Você gosta de cuidar e ajudar pessoas?</p>
+      <label><input type="radio" name="p1" value="3"> Sim</label>
+      <label><input type="radio" name="p1" value="2"> Talvez</label>
+      <label><input type="radio" name="p1" value="1"> Não</label>
     </div>
 
-    <hr>
 
-    <div class="question-block">
-        <div class="question">
-            <div class="number">2</div>
-            <div class="question-text">Aqui vai vir coisa</div>
-        </div>
-        <div class="option">
-            <p>Concordo</p>
-            <p>Neutro</p>
-            <p>Discordo</p>
-        </div>
+    <div class="pergunta" data-curso="medicina">
+      <p>2. Você se interessa por aprender sobre o corpo humano e saúde?</p>
+      <label><input type="radio" name="p2" value="3"> Sim</label>
+      <label><input type="radio" name="p2" value="2"> Talvez</label>
+      <label><input type="radio" name="p2" value="1"> Não</label>
     </div>
 
-    <hr>
 
-    <div class="question-block">
-        <div class="question">
-            <div class="number">3</div>
-            <div class="question-text">Aqui vai vir coisa</div>
-        </div>
-        <div class="option">
-            <p>Concordo</p>
-            <p>Neutro</p>
-            <p>Discordo</p>
-        </div>
+    <div class="pergunta" data-curso="medicina">
+      <p>3. Você consegue manter a calma em situações de emergência?</p>
+      <label><input type="radio" name="p9" value="3"> Sim</label>
+      <label><input type="radio" name="p9" value="2"> Talvez</label>
+      <label><input type="radio" name="p9" value="1"> Não</label>
     </div>
 
-    <hr>
 
-    <div class="question-block">
-        <div class="question">
-            <div class="number">4</div>
-            <div class="question-text">Aqui vai vir coisa</div>
-        </div>
-        <div class="option">
-            <p>Concordo</p>
-            <p>Neutro</p>
-            <p>Discordo</p>
-        </div>
+    <!-- ADMINISTRAÇÃO -->
+    <div class="pergunta" data-curso="adm">
+      <p>4. Você se considera uma pessoa organizada e gosta de planejar coisas?</p>
+      <label><input type="radio" name="p3" value="3"> Sim</label>
+      <label><input type="radio" name="p3" value="2"> Talvez</label>
+      <label><input type="radio" name="p3" value="1"> Não</label>
     </div>
 
-    <hr>
 
-    <div class="question-block">
-        <div class="question">
-            <div class="number">5</div>
-            <div class="question-text">Aqui vai vir coisa</div>
-        </div>
-        <div class="option">
-            <p>Concordo</p>
-            <p>Neutro</p>
-            <p>Discordo</p>
-        </div>
+    <div class="pergunta" data-curso="adm">
+      <p>5. Você gosta de trabalhar com metas e resolver problemas em equipe?</p>
+      <label><input type="radio" name="p4" value="3"> Sim</label>
+      <label><input type="radio" name="p4" value="2"> Talvez</label>
+      <label><input type="radio" name="p4" value="1"> Não</label>
     </div>
 
-    <hr>
 
-    <div class="final-sction">
-        <div class="action">
-            <div class="number">1</div>
-            <div class="action-text"></div>
-        </div>
-
+    <div class="pergunta" data-curso="adm">
+      <p>6. Você gosta de liderar pessoas e tomar decisões importantes?</p>
+      <label><input type="radio" name="p10" value="3"> Sim</label>
+      <label><input type="radio" name="p10" value="2"> Talvez</label>
+      <label><input type="radio" name="p10" value="1"> Não</label>
     </div>
-    <p><a href="../testevoc.html" target="_self" rel="previous">Voltar</a></p>
+
+
+    <!-- SISTEMAS DE INFORMAÇÃO -->
+    <div class="pergunta" data-curso="sistemas">
+      <p>7. Você gosta de resolver problemas e mexer com tecnologia?</p>
+      <label><input type="radio" name="p5" value="3"> Sim</label>
+      <label><input type="radio" name="p5" value="2"> Talvez</label>
+      <label><input type="radio" name="p5" value="1"> Não</label>
+    </div>
+
+
+    <div class="pergunta" data-curso="sistemas">
+      <p>8. Você tem curiosidade sobre como funcionam os programas e computadores?</p>
+      <label><input type="radio" name="p6" value="3"> Sim</label>
+      <label><input type="radio" name="p6" value="2"> Talvez</label>
+      <label><input type="radio" name="p6" value="1"> Não</label>
+    </div>
+
+
+    <div class="pergunta" data-curso="sistemas">
+      <p>9. Você gosta de aprender coisas novas e acompanhar avanços tecnológicos?</p>
+      <label><input type="radio" name="p11" value="3"> Sim</label>
+      <label><input type="radio" name="p11" value="2"> Talvez</label>
+      <label><input type="radio" name="p11" value="1"> Não</label>
+    </div>
+
+
+    <!-- MEDICINA VETERINÁRIA -->
+    <div class="pergunta" data-curso="vet">
+      <p>10. Você gosta de lidar com animais e cuidar da natureza?</p>
+      <label><input type="radio" name="p7" value="3"> Sim</label>
+      <label><input type="radio" name="p7" value="2"> Talvez</label>
+      <label><input type="radio" name="p7" value="1"> Não</label>
+    </div>
+
+
+    <div class="pergunta" data-curso="vet">
+      <p>11. Você se preocupa com o bem-estar e a saúde dos animais?</p>
+      <label><input type="radio" name="p8" value="3"> Sim</label>
+      <label><input type="radio" name="p8" value="2"> Talvez</label>
+      <label><input type="radio" name="p8" value="1"> Não</label>
+    </div>
+
+
+    <div class="pergunta" data-curso="vet">
+      <p>12. Você se sente confortável em lidar com animais feridos ou doentes?</p>
+      <label><input type="radio" name="p12" value="3"> Sim</label>
+      <label><input type="radio" name="p12" value="2"> Talvez</label>
+      <label><input type="radio" name="p12" value="1"> Não</label>
+    </div>
+
+
+    <button type="button" id="botaoResultado">Ver resultado</button>
+  </form>
+
+
+  <h2 id="resultado"></h2>
+
+
+  <script src="script.js"></script>
 </body>
+</html>
