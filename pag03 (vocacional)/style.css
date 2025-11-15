@@ -1,84 +1,120 @@
 @charset "UTF-8";
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+    
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body,#root { height: 100%; }
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f6f6f6;
+  color: #111;
+}
 
-    body {
-        background-color: white;
-    }
+/* Moldura com faixas superior/inferior */
+.page-frame {
+    min-height: 100vh;
+    display:flex; 
+    flex-direction:column;
+}
 
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background: linear-gradient(90deg, #fff 50%, #ffcc00 50%);
-    }
 
-    .image-side {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.top-bar {
+    height: 12px;
+    background: linear-gradient(90deg,#4b7bec,#fff,#4b7bec);
+}
 
-    .image-side img {
-        width: 70%;
-        border-radius: 10px;
-    }
+.bottom-bar {
+    height: 14px;
+    background: linear-gradient(90deg,#2f8a59,#fff,#2f8a59); 
+    margin-top:auto; 
+}
 
-    .text-side {
-        flex: 1;
-        padding: 40px;
-        background-color: #ffcc00;
-        border-radius: 10px;
-    }
+/* Área principal */
+.hero {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 18px auto;
+}
 
-    .text-side h1 {
-        font-size: 2rem;
-        color: black;
-        font-weight: 700;
-    }
+/* Esquerda: foto com corte circular parcial */
+.left-photo {
+  flex: 1.1;
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.left-photo img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  transform: translateX(-6%);
+}
 
-    .text-size h2 {
-        font-size: 1.2rem;
-        color: #ff4d4d;
-        font-weight: 700;
-        margin-bottom: 30px;
-    }
+/* Direita: painel branco com título e opções */
+.right-panel {
+  flex: 1;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  border-radius: 18px;
+  padding: 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
 
-    .box {
-        background-color: white;
-        border-radius: 12px;
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
+/* Título */
+.title-area { text-align:center; padding: 8px 6px 18px; }
+.title-area h1 {
+  font-size: 28px;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+  color: #0c1530;
+  font-weight: 800;
+}
+.title-area .subtitle {
+  color: #2372ff;
+  font-weight: 700;
+  margin-top: 6px;
+}
 
-    .btn {
-        background-color: #4a6aff;
-        color: white;
-        border: none;
-        padding: 15px 25px;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-right: 15px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+/* Lista de opções */
+.options { display:flex; flex-direction:column; gap:12px; margin-top:6px; }
 
-    .btn:hover {
-        background-color: #2d4fcc;
-    }
+.row {
+  display:flex;
+  align-items:center;
+  background: rgba(245,245,245,0.8);
+  border-radius: 10px;
+  padding: 14px;
+  gap: 12px;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.02);
+}
 
-    .box p {
-        color: black;
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
+/* Texto da esquerda */
+.row-text {
+  flex: 1;
+  color: #333;
+  font-weight: 400;
+  padding-left: 12px;
+  font-size: 16px;
+}
+
+/* Botão azulado à direita com canto arredondado esquerdo */
+.cta {
+  display:inline-block;
+  background: linear-gradient( 180deg, #4f7bff, #3b59d9);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 28px 6px 6px 28px; /* arredonda o lado esquerdo */
+  font-weight: 700;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba( 59, 89, 217, 0.18);
+}
