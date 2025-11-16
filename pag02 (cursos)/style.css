@@ -1,201 +1,362 @@
 @charset "UTF-8";
 
-    .cursos-section {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #5170ff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.btn-voltar {
+    background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-voltar:hover {
+    background-color: #f6a500;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* BANNER */
+
+.banner {
+    position: relative;
+    background: url() center/cover;
+    background-attachment: fixed;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(to right, #f6a500, #ffc107);
+    z-index: 10;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: #fff;
+    z-index: 10;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.banner h1 {
+    font-size: 56px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-shadow: none;
+}
+
+/* SEÇÃO CURSOS */
+
+.cursos-section {
     position: relative;
     background-color: #4a4a4a;
-    padding: 34px 20px 60px;
+    padding: 40px 20px 50px;
     text-align: center;
-    }
+    margin-top: 8px;
+}
 
+.cursos-section::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: #f6a500;
 
-    .cursos-section::before, .cursos-section::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background: #f6a500;
+}
 
-    }
+.cursos-section::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: #5a5a5a;
+}
 
+.cursos-section h2 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 
-    .cursos-section::before {
-        top: 0; 
+}
 
-    }
+/* CAROUSEL CONTAINER */
 
-    .cursos-section::after  { 
-        bottom: 0; 
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 
-    }
+}
 
-    .cursos-section h2 {
-        color: #fff;
-        font-size: 26px;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+.carousel-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    max-width: 920px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
 
-    }
+}
 
-    /* Container do carousel */
-    .carousel-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        max-width: 1160px;
-        margin: 0 auto;
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
 
-    }
+}
 
-    /* área rolável com scroll-snap */
-    .carousel-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        width: 100%;
-        max-width: 920px;
-        padding: 20px 30px;
-        box-sizing: border-box;
-        scrollbar-width: none;
+.carousel {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0 10px;
 
-    }
-    .carousel-wrapper::-webkit-scrollbar { 
-        display: none; 
+}
+
+/* CARD */
+
+.curso-card {
+    scroll-snap-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 310px;
+    max-width: 310px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.curso-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+
+}
+
+/* CATEGORIA */
+
+.categoria {
+    display: inline-block;
+    background: #f6a500;
+    color: #222;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    align-self: flex-start;
+
+}
+
+/* TÍTULO */
+
+.curso-card h3 {
+    color: #111;
+    margin: 6px 0 12px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.4;
+    font-weight: bold;
+
+}
+
+/* INFO */
+
+.card-info {
+    flex-grow: 1;
+    margin: 8px 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 13px;
+
+}
+
+.info-item .material-symbols-outlined {
+    color: #f6a500;
+    font-size: 20px;
+    flex-shrink: 0;
+
+}
+
+/* BOTÃO */
+
+.btn-saiba-mais {
+    margin-top: auto;
+    background-color: #f6a500;
+    color: #222;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: lowercase;
+
+}
+
+.btn-saiba-mais:hover {
+    background-color: #ff8c00;
+
+}
+
+/* SETAS */
+
+.carousel-btn {
+    background: #fff;
+    color: #333;
+    border-radius: 6px;
+    border: none;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+
+}
+
+.carousel-btn:hover {
+    background-color: #f6a500;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+
+}
+
+/* DOTS */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+
+}
+
+.dot:hover {
+    background: rgba(255,255,255,0.6);
+
+}
+
+.dot.active {
+    background: #fff;
+    border-color: white;
     
-    }
-
-    .carousel {
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-
-    }
-
-    /* Card */
-    .curso-card {
-        scroll-snap-align: center;
-        background-color: #fff;
-        border-radius: 12px;
-        padding: 18px;
-        min-width: 280px;   /* ajusta quantos cabem em desktop */
-        max-width: 320px;
-        flex-shrink: 0;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.16);
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    /* contorno arredondado maior à imagem (se houver) */
-    .curso-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 16px 36px rgba(0,0,0,0.28);
-
-    }
-
-    /* pílula de categoria no topo */
-    .categoria {
-        display: inline-block;
-        background: #f6a500;
-        color: #222;
-        padding: 6px 16px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 10px;
-
-    }
-
-    /* título e infos */
-    .curso-card h3 {
-        color:#111; 
-        margin: 8px 0 12px; 
-        font-size:18px; 
-        text-align:left;
-        
-    }
-
-    .card-info { 
-        flex-grow:1;
-        margin:8px 0 14px; 
-        display:flex; 
-        flex-direction:column; 
-        gap:12px; 
-        
-    }
-
-    .info-item { 
-        display:flex; 
-        align-items:center; 
-        gap:10px; 
-        color:#666;
-        font-size:14px; 
-    }
-    .info-item .material-symbols-outlined { 
-        color:#f6a500;
-        font-size:20px;
-         
-    }
-
-    /* botão */
-    .btn-saiba-mais {
-        margin-top: auto;
-        background-color: #f6a500;
-        color: #222;
-        padding: 10px 18px;
-        border-radius: 22px;
-        text-decoration: none;
-        font-weight: 700;
-        text-align:center;
-        display:inline-block;
-    }
-    .btn-saiba-mais:hover {
-        background:#ff8c00; 
-        color:#111;
-
-    }
-
-
-    /* setas (visuais, com contraste como na imagem) */
-    .carousel-btn {
-        background: #fff;
-        color: #333;
-        border-radius: 8px;
-        border: none;
-        width: 38px;
-        height: 34px;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-        cursor: pointer;
-        font-size: 18px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-    }
-
-
-    /* dots */
-    .carousel-dots { 
-        display:flex;
-        justify-content:center;
-        gap:10px;
-        margin-top:18px;
-
-    }
-
-    .dot {
-        width:12px; height:12px; border-radius:50%;
-        background: rgba(255,255,255,0.35);
-        box-shadow: inset 0 0 0 2px rgba(0,0,0,0.06);
-        cursor:pointer;
-
-    }
-
-    .dot.active { 
-        background:#fff; 
-        
-    }
+}
