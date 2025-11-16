@@ -43,5 +43,8 @@ document.getElementById("botaoResultado").addEventListener("click", function() {
   }
 
   document.getElementById("resultado").textContent = mensagem;
-});
+
  
+  document.getElementById('mensagemFinal').style.display = 'block';
+
+});
