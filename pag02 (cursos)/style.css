@@ -1,362 +1,178 @@
 @charset "UTF-8";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
 
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HEADER */
 
-.header {
-    background-color: #5170ff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
-}
-
-.header-content {
+.topo {
+    background: #4e6aff;
+    padding: 15px 25px;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-
 }
 
-.logo {
-    font-size: 24px;
+.topo .logo {
+    font-size: 28px;
     font-weight: bold;
-    color: white;
-
 }
 
-.btn-voltar {
-    background-color: white;
-    color: #333;
-    padding: 10px 20px;
+.voltar {
+    background: white;
+    padding: 7px 18px;
     border-radius: 20px;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: black;
+    display: inline-block;
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
+
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+
 }
 
-.btn-voltar:hover {
-    background-color: #f6a500;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.voltar:hover{
+   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.496);
 }
-
-/* BANNER */
+.voltar:active{
+    transform: scale(0.96);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+}
 
 .banner {
+    height: 220px;
+    background: url("favicon/imagem\ cursos.jpeg");
+    background-size: cover;
+    background-position: center;
     position: relative;
-    background: url() center/cover;
-    background-attachment: fixed;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: linear-gradient(to right, #f6a500, #ffc107);
-    z-index: 10;
-}
-
-.banner::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: #fff;
-    z-index: 10;
-}
-
-.banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: 1;
-}
-
-.banner-content {
-    position: relative;
-    z-index: 2;
-    text-align: left;
-    padding-left: 40px;
+    border-top: 10px solid #f5a800;
+    border-bottom: 10px solid #f5a800;
 }
 
 .banner h1 {
-    font-size: 56px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: black;
+    font-size: 50px;
     font-weight: 900;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    text-shadow: none;
+    line-height: 45px;
 }
 
-/* SEÇÃO CURSOS */
 
-.cursos-section {
-    position: relative;
-    background-color: #4a4a4a;
-    padding: 40px 20px 50px;
+.titulo-cursos {
+    background: #4e4e4e;
+    padding: 30px;
     text-align: center;
-    margin-top: 8px;
 }
 
-.cursos-section::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: #f6a500;
-
-}
-
-.cursos-section::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: #5a5a5a;
-}
-
-.cursos-section h2 {
-    color: #fff;
+.titulo-cursos h2 {
+    color: white;
     font-size: 32px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
+    letter-spacing: 3px;
 }
 
-/* CAROUSEL CONTAINER */
 
-.carousel-container {
-    position: relative;
+.container-cards {
+    background: #4e4e4e;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-
+    gap: 25px;
+    padding: 40px 0;
 }
 
-.carousel-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    max-width: 920px;
-    padding: 10px 0;
-    box-sizing: border-box;
-    scrollbar-width: none;
-
+.card {
+    background: white;
+    width: 260px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
-
-.carousel-wrapper::-webkit-scrollbar {
-    display: none;
-
-}
-
-.carousel {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 0 10px;
-
-}
-
-/* CARD */
-
-.curso-card {
-    scroll-snap-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 24px;
-    min-width: 310px;
-    max-width: 310px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.curso-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-
-}
-
-/* CATEGORIA */
 
 .categoria {
-    display: inline-block;
-    background: #f6a500;
-    color: #222;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    align-self: flex-start;
-
+    color: gray;
+    font-size: 15px;
 }
 
-/* TÍTULO */
-
-.curso-card h3 {
-    color: #111;
-    margin: 6px 0 12px;
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.4;
-    font-weight: bold;
-
-}
-
-/* INFO */
-
-.card-info {
-    flex-grow: 1;
-    margin: 8px 0 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #666;
-    font-size: 13px;
-
-}
-
-.info-item .material-symbols-outlined {
-    color: #f6a500;
+.card h3 {
+    margin-top: 5px;
     font-size: 20px;
-    flex-shrink: 0;
-
 }
 
-/* BOTÃO */
+.info {
+    margin: 20px 0;
+}
 
-.btn-saiba-mais {
-    margin-top: auto;
-    background-color: #f6a500;
-    color: #222;
-    padding: 10px 18px;
+.linha {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.icone {
+    margin-right: 8px;
+}
+
+.btn {
+    width: 100%;
+    background: #f5a800;
+    border: none;
+    padding: 12px;
+    color: black;
+    font-weight: bold;
     border-radius: 20px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
+    cursor: pointer;
+}
+
+
+.dots {
+    background: #f5a800;
+    padding: 15px;
     text-align: center;
+}
+
+.dots span {
     display: inline-block;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-transform: lowercase;
-
-}
-
-.btn-saiba-mais:hover {
-    background-color: #ff8c00;
-
-}
-
-/* SETAS */
-
-.carousel-btn {
-    background: #fff;
-    color: #333;
-    border-radius: 6px;
-    border: none;
-    width: 36px;
-    height: 36px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-
-}
-
-.carousel-btn:hover {
-    background-color: #f6a500;
-    color: white;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-
-}
-
-/* DOTS */
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 24px;
-
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: white;
     border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255,255,255,0.2);
-
 }
 
-.dot:hover {
-    background: rgba(255,255,255,0.6);
-
+.container-cards   .btn button:hover{
+    color:rgb(14, 11, 184);
+    background-color: rgb(207, 40, 196);
 }
 
-.dot.active {
-    background: #fff;
-    border-color: white;
-    
+
+.btn {
+  background-color: #e9b000;   
+  padding: 12px 28px;
+  border: none;
+  border-radius: 18px;
+  font-size: 16px;
+  cursor: pointer;
+
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
+
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
 }
+
+.btn:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.536);
+}
+
+.btn:active {
+  transform: scale(0.96); 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+}
+
+
+
+
