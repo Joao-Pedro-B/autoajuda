@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(190, 190, 190);
+    background-attachment: fixed;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 47px;
+
+    padding-right: 40px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #0022fc;
+
+    padding-bottom: 80px;
+    padding-right: 40px;
+}
+
+.barra-azul1, .barra-azul2 {
+    width: 100%;
+    height: 20px;
+    background-color: #3e57ff;
+}
+
+.barra-branca1, .barra-branca2 {
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+}
+
+.caixa {
+    position: relative;      
+    overflow: hidden;       
+
+    width: 100%;
+    height: 585px;
+    margin: auto;
+
+    background-color: #d4a62f;   
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding-bottom: 30px;
+}
+
+/*   circulo   */
+.caixa::before {
+    content: "";
+    position: absolute;
+
+    right: -400px;  
+    top: -250px;        
+
+    width: 1150px;
+    height: 1150px;
+
+    background-color: #f0d89a;
+    border-radius: 50%;   
+
+    z-index: 0;     
+}
+
+/* elementos por cima */
+.caixa * {
+    position: relative;
+    z-index: 1;
+}
+
+.foto {
+    position: absolute;
+
+    right: 300px;
+    bottom: 1px;    
+
+    height: 575px; 
+    
+    object-fit: contain;
+    z-index: 1; 
+}
+
+.opcao {
+    background-color: rgba(255, 255, 255, 0.650);
+    width: 1150px;
+    margin: 10px 0;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    backdrop-filter: blur(4px);
+}
+
+.opcao span {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;    
+}
+
+.botao {
+    background-color: #3e57ff;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 30px;
+    padding: 20px 40px;
+    border-radius: 10px 0 0 10px;
+
+    width: 400px;
+    text-align: center;
+}
+
+@media (max-width: 780px) {
+
+    .caixa {
+        height: auto;
+        padding: 40px 0;
+        align-items: center;
+    }
+
+    .caixa::before {
+        width: 700px;
+        height: 700px;
+        right: -250px;
+        top: -200px;
+    }
+
+    .mulher {
+        position: relative;
+        top: 0;
+        right: 0;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    h1, h2 {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .opcao {
+        width: 90%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .botao {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
